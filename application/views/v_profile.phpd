@@ -1,0 +1,112 @@
+
+<html>
+<head>
+<link href="<?=base_url()?>assets/css/bootstrap.min.css?>" rel="stylesheet">
+<link href="<?=base_url()?>assets/css/bootstrap.css?>" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's Javascript plugins)-->
+<script type="text/javascript" src="<?=base_url()?>assets/js/jquery-2.0.3.min.js?>"></script>
+
+</head>
+<body>
+
+<?php
+//echo "yyyy".$loginid;
+// print_r($updateuser);
+
+//foreach($updateuser as $key)
+//{
+?>
+<nav class="navbar navbar-default" role="navigation">
+     <div class="container-fluid">
+     </div>
+</nav>
+
+<form id="updateuser" name="updateuser" action="<?=site_url()?>/customer/updateuser" method="POST">
+<!-- <form class="form-horizontal" method="post" action="<?php echo site_url('customer/register_customer'); ?>"
+ -->
+ <fieldset> 
+<!-- Form Name -->
+<legend>Update User Profile</legend>
+
+<?php 
+// print_r($updateuser);
+  foreach($updateuser as $data)
+  {
+?>
+ 
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="txtfullname">Fullname</label>
+  <div class="controls">
+    <input name="txtfullname" type="text" placeholder="fullname" class="input-xlarge" value="<?=$data->cu_fullname?>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="txtusername">Username</label>
+  <div class="controls">
+    <input name="txtusername" type="text" placeholder="username" class="input-xlarge" value="<?=$data->username?>">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="password">Password</label>
+  <div class="controls">
+    <input name="password" type="password" placeholder="password" class="input-xlarge" value="<?=$data->password?>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="txtemail">Email</label>
+  <div class="controls">
+    <input name="txtemail" type="text" placeholder="email" class="input-xlarge" value="<?=$data->cu_email?>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="txtaddress">Address</label>
+  <div class="controls">
+    <input name="txtaddress" type="text" placeholder="address" class="input-xlarge" value="<?=$data->cu_address?>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="txttelno">Telephone No</label>
+  <div class="controls">
+  <input name="txttelno" type="text" placeholder="telephone number" class="input-xlarge" value="<?=$data->cu_tel_no?>">
+  <br>
+  <p class="help-block col-sm-2">example :  0123456789</p>
+  </div>
+</div>
+
+<?php }?>
+
+<!-- Button -->
+<div class="form-group">
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <button type="submit" class="btn btn-default"> Save</button>
+    </div>
+  </div>
+</div>
+<?php
+
+?>
+
+</fieldset>
+</form>
+</body>
+</html>
